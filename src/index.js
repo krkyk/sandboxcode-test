@@ -152,3 +152,16 @@ const checkSum = (num1, num2) => {
 };
 console.log(checkSum(50, 60));
 console.log(checkSum(50, 30));
+
+/**
+ * 論理演算子
+ */
+// ||は左側がfalseとなるとき右側を返す
+const number = null;
+const fee = number || "金額未確定です。";
+console.log(fee);
+
+// &&は左側がtrueなら右側を返す
+const number2 = null;
+const fee2 = number2 && "何か設定されました";
+console.log(fee2);
