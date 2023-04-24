@@ -6,6 +6,7 @@ import "./styles.css";
 export default function App() {
   const [leftValue, setLeftValue] = useState(0);
   const [operator, setOperator] = useState(null);
+  const [displayOperator, setDisplayOperator] = useState(null);
   const [rightValue, setRightValue] = useState(0);
   const [answer, setAnswer] = useState(0);
   const [isClickEqual, setIsClickEqual] = useState(false);
@@ -21,6 +22,13 @@ export default function App() {
   const clickOperator = (ope) => {
     if (leftValue !== 0 && operator === null) {
       setOperator(ope);
+      if (ope === "*") {
+        setDisplayOperator("×");
+      } else if (ope === "/") {
+        setDisplayOperator("÷");
+      } else {
+        setDisplayOperator(ope);
+      }
     }
   };
 
@@ -44,6 +52,7 @@ export default function App() {
     setLeftValue(0);
     setRightValue(0);
     setOperator(null);
+    setDisplayOperator(null);
     setAnswer(0);
     setIsClickEqual(false);
   };
@@ -53,6 +62,7 @@ export default function App() {
       <DisplayAnswer
         leftValue={leftValue}
         operator={operator}
+        displayOperator={displayOperator}
         rightValue={rightValue}
         answer={answer}
       />
