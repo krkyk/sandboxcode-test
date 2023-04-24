@@ -7,17 +7,18 @@ export default function App() {
   const [operator, setOperator] = useState(null);
   const [rightValue, setRightValue] = useState(0);
   const [answer, setAnswer] = useState(0);
+  const [isClickEqual, setIsClickEqual] = useState(false);
 
   const clickNumber = (num) => {
     if (operator === null) {
-      setLeftValue(num);
-    } else {
-      setRightValue(num);
+      setLeftValue(leftValue * 10 + num);
+    } else if (!isClickEqual) {
+      setRightValue(rightValue * 10 + num);
     }
   };
 
   const clickOperator = (ope) => {
-    if (leftValue !== 0) {
+    if (leftValue !== 0 && operator === null) {
       setOperator(ope);
     }
   };
@@ -35,6 +36,7 @@ export default function App() {
     if (operator === "*") {
       setAnswer(leftValue * rightValue);
     }
+    setIsClickEqual(true);
   };
 
   const clickClear = () => {
@@ -42,6 +44,7 @@ export default function App() {
     setRightValue(0);
     setOperator(null);
     setAnswer(0);
+    setIsClickEqual(false);
   };
 
   return (
