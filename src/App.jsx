@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button } from "./components/Button";
+import { Button } from "./components/Button/Button";
+import { DisplayAnswer } from "./components/DisplayAnswer/DisplayAnswer";
 import "./styles.css";
 
 export default function App() {
@@ -49,13 +50,12 @@ export default function App() {
 
   return (
     <div class="container">
-      <div className="ans">
-        {leftValue}
-        {operator === null || operator}
-        {rightValue === 0 || rightValue}
-        {answer === 0 || "="}
-        {answer === 0 || answer}
-      </div>
+      <DisplayAnswer
+        leftValue={leftValue}
+        operator={operator}
+        rightValue={rightValue}
+        answer={answer}
+      />
       <Button
         clickNumber={clickNumber}
         clickOperator={clickOperator}
