@@ -1,2 +1,1 @@
-# sandboxcode-test
-Created with CodeSandbox
+React を使用して作成した単純な計算機です。
