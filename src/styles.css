@@ -2,3 +2,33 @@ body {
   font-family: sans-serif;
   margin: 0;
 }
+
+.container {
+  width: 160px;
+  margin: 30px;
+  padding: 10px;
+  background-color: #e7e7eb;
+  border-radius: 5%;
+}
+
+.ans {
+  background-color: #fff;
+  margin: 10px 3px;
+  padding: 8px;
+}
+
+button {
+  width: 40px;
+  height: 40px;
+  font-size: large;
+  background-color: #38a1db;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+}
+
+button:hover {
+  background-color: #a0d8ef;
+  color: #fff;
+  cursor: pointer;
+}
