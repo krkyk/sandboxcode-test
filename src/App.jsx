@@ -57,6 +57,15 @@ export default function App() {
     setIsClickEqual(false);
   };
 
+  const clickToggleSign = () => {
+    if (leftValue !== 0 && rightValue === 0) {
+      setLeftValue(-leftValue);
+    }
+    if (operator !== null && rightValue !== 0) {
+      setRightValue(-rightValue);
+    }
+  };
+
   return (
     <div class="container">
       <DisplayAnswer
@@ -71,6 +80,7 @@ export default function App() {
         clickOperator={clickOperator}
         clickEqual={clickEqual}
         clickClear={clickClear}
+        clickToggleSign={clickToggleSign}
       />
     </div>
   );

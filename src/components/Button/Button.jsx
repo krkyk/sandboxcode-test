@@ -5,10 +5,14 @@ export const Button = ({
   clickNumber,
   clickOperator,
   clickEqual,
-  clickClear
+  clickClear,
+  clickToggleSign
 }) => {
   return (
     <>
+      <button className="clear-btn" onClick={() => clickClear()}>
+        AC
+      </button>
       <div>
         {[9, 8, 7].map((num) => {
           return <button onClick={() => clickNumber(num)}>{num}</button>;
@@ -29,7 +33,7 @@ export const Button = ({
       </div>
       <div>
         <button onClick={() => clickNumber(0)}>0</button>
-        <button onClick={() => clickClear()}>C</button>
+        <button onClick={() => clickToggleSign()}>+/-</button>
         <button onClick={() => clickEqual()}>=</button>
         <button onClick={() => clickOperator("/")}>÷</button>
       </div>
