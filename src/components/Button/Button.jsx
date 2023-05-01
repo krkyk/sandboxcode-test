@@ -16,20 +16,32 @@ export const Button = ({
       </button>
       <button onClick={() => clickPercent()}>%</button>
       <div>
-        {[9, 8, 7].map((num) => {
-          return <button onClick={() => clickNumber(num)}>{num}</button>;
+        {[9, 8, 7].map((num, index) => {
+          return (
+            <button onClick={() => clickNumber(num)} key={index}>
+              {num}
+            </button>
+          );
         })}
         <button onClick={() => clickOperator("+")}>+</button>
       </div>
       <div>
-        {[6, 5, 4].map((num) => {
-          return <button onClick={() => clickNumber(num)}>{num}</button>;
+        {[6, 5, 4].map((num, index) => {
+          return (
+            <button onClick={() => clickNumber(num)} key={index}>
+              {num}
+            </button>
+          );
         })}
         <button onClick={() => clickOperator("-")}>-</button>
       </div>
       <div>
-        {[3, 2, 1].map((num) => {
-          return <button onClick={() => clickNumber(num)}>{num}</button>;
+        {[3, 2, 1].map((num, index) => {
+          return (
+            <button onClick={() => clickNumber(num)} key={index}>
+              {num}
+            </button>
+          );
         })}
         <button onClick={() => clickOperator("*")}>×</button>
       </div>

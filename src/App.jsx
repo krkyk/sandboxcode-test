@@ -69,7 +69,6 @@ export default function App() {
   };
 
   const clickPercent = () => {
-    console.log("%");
     if (operator === "+") {
       setAnswer(leftValue + (rightValue / 100) * leftValue);
     }
@@ -86,7 +85,7 @@ export default function App() {
   };
 
   return (
-    <div class="container">
+    <div className="container">
       <DisplayAnswer
         leftValue={leftValue}
         operator={operator}
