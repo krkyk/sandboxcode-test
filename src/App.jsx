@@ -10,6 +10,7 @@ export default function App() {
   const [rightValue, setRightValue] = useState(0);
   const [answer, setAnswer] = useState(0);
   const [isClickEqual, setIsClickEqual] = useState(false);
+  const [isClickPercent, setIsClickPercent] = useState(false);
 
   const clickNumber = (num) => {
     if (operator === null) {
@@ -55,6 +56,7 @@ export default function App() {
     setDisplayOperator(null);
     setAnswer(0);
     setIsClickEqual(false);
+    setIsClickPercent(false);
   };
 
   const clickToggleSign = () => {
@@ -66,6 +68,23 @@ export default function App() {
     }
   };
 
+  const clickPercent = () => {
+    console.log("%");
+    if (operator === "+") {
+      setAnswer(leftValue + (rightValue / 100) * leftValue);
+    }
+    if (operator === "-") {
+      setAnswer(leftValue - (rightValue / 100) * leftValue);
+    }
+    if (operator === "/") {
+      setAnswer((leftValue / rightValue) * 100);
+    }
+    if (operator === "*") {
+      setAnswer(leftValue * (rightValue / 100));
+    }
+    setIsClickPercent(true);
+  };
+
   return (
     <div class="container">
       <DisplayAnswer
@@ -73,6 +92,8 @@ export default function App() {
         operator={operator}
         displayOperator={displayOperator}
         rightValue={rightValue}
+        isClickEqual={isClickEqual}
+        isClickPercent={isClickPercent}
         answer={answer}
       />
       <Button
@@ -81,6 +102,7 @@ export default function App() {
         clickEqual={clickEqual}
         clickClear={clickClear}
         clickToggleSign={clickToggleSign}
+        clickPercent={clickPercent}
       />
     </div>
   );

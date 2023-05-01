@@ -6,6 +6,8 @@ export const DisplayAnswer = ({
   operator,
   displayOperator,
   rightValue,
+  isClickEqual,
+  isClickPercent,
   answer
 }) => {
   return (
@@ -13,7 +15,8 @@ export const DisplayAnswer = ({
       {leftValue}
       {operator === null || displayOperator}
       {rightValue === 0 || rightValue}
-      {answer === 0 || "="}
+      {isClickEqual && "="}
+      {isClickPercent && "%"}
       {answer === 0 || answer}
     </div>
   );

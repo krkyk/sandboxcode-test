@@ -6,13 +6,15 @@ export const Button = ({
   clickOperator,
   clickEqual,
   clickClear,
-  clickToggleSign
+  clickToggleSign,
+  clickPercent
 }) => {
   return (
     <>
       <button className="clear-btn" onClick={() => clickClear()}>
         AC
       </button>
+      <button onClick={() => clickPercent()}>%</button>
       <div>
         {[9, 8, 7].map((num) => {
           return <button onClick={() => clickNumber(num)}>{num}</button>;
