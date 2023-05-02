@@ -42,7 +42,9 @@ export default function App() {
       setAnswer(leftValue - rightValue);
     }
     if (operator === "/") {
-      setAnswer(leftValue / rightValue);
+      setAnswer(
+        Math.round((leftValue / rightValue) * Math.pow(10, 5)) / Math.pow(10, 5)
+      );
     }
     if (operator === "*") {
       setAnswer(leftValue * rightValue);
@@ -90,6 +92,9 @@ export default function App() {
     setIsClickEqual(true);
     setIsClickRoot(true);
     setAnswer(leftValue ** (1 / 2));
+    setAnswer(
+      Math.round(leftValue ** (1 / 2) * Math.pow(10, 5)) / Math.pow(10, 5)
+    );
   };
 
   return (
