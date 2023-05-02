@@ -8,6 +8,7 @@ export const DisplayAnswer = ({
   rightValue,
   isClickEqual,
   isClickPercent,
+  isClickRoot,
   answer
 }) => {
   return (
@@ -15,6 +16,7 @@ export const DisplayAnswer = ({
       {leftValue}
       {operator === null || displayOperator}
       {rightValue === 0 || rightValue}
+      {isClickRoot && "√"}
       {isClickEqual && "="}
       {isClickPercent && "%"}
       {answer === 0 || answer}

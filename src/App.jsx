@@ -11,6 +11,7 @@ export default function App() {
   const [answer, setAnswer] = useState(0);
   const [isClickEqual, setIsClickEqual] = useState(false);
   const [isClickPercent, setIsClickPercent] = useState(false);
+  const [isClickRoot, setIsClickRoot] = useState(false);
 
   const clickNumber = (num) => {
     if (operator === null) {
@@ -57,6 +58,7 @@ export default function App() {
     setAnswer(0);
     setIsClickEqual(false);
     setIsClickPercent(false);
+    setIsClickRoot(false);
   };
 
   const clickToggleSign = () => {
@@ -84,6 +86,12 @@ export default function App() {
     setIsClickPercent(true);
   };
 
+  const clickRoot = () => {
+    setIsClickEqual(true);
+    setIsClickRoot(true);
+    setAnswer(leftValue ** (1 / 2));
+  };
+
   return (
     <div className="container">
       <DisplayAnswer
@@ -93,6 +101,7 @@ export default function App() {
         rightValue={rightValue}
         isClickEqual={isClickEqual}
         isClickPercent={isClickPercent}
+        isClickRoot={isClickRoot}
         answer={answer}
       />
       <Button
@@ -102,6 +111,7 @@ export default function App() {
         clickClear={clickClear}
         clickToggleSign={clickToggleSign}
         clickPercent={clickPercent}
+        clickRoot={clickRoot}
       />
     </div>
   );
