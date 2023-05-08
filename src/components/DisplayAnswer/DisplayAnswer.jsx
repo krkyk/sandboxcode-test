@@ -9,6 +9,7 @@ export const DisplayAnswer = ({
   isClickEqual,
   isClickPercent,
   isClickRoot,
+  isClickTax,
   answer
 }) => {
   return (
@@ -19,6 +20,7 @@ export const DisplayAnswer = ({
       {isClickRoot && "√"}
       {isClickEqual && "="}
       {isClickPercent && "%"}
+      {isClickTax && "=>"}
       {answer === 0 || answer}
     </div>
   );

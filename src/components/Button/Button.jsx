@@ -8,7 +8,9 @@ export const Button = ({
   clickClear,
   clickToggleSign,
   clickPercent,
-  clickRoot
+  clickRoot,
+  clickInTax,
+  clickWithoutTax
 }) => {
   return (
     <>
@@ -17,6 +19,12 @@ export const Button = ({
       </button>
       <button onClick={() => clickRoot()}>√</button>
       <button onClick={() => clickPercent()}>%</button>
+      <button className="tax-btn" onClick={() => clickInTax()}>
+        税込
+      </button>
+      <button className="tax-btn" onClick={() => clickWithoutTax()}>
+        税抜
+      </button>
       <div>
         {[9, 8, 7].map((num, index) => {
           return (

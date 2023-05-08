@@ -12,6 +12,8 @@ export default function App() {
   const [isClickEqual, setIsClickEqual] = useState(false);
   const [isClickPercent, setIsClickPercent] = useState(false);
   const [isClickRoot, setIsClickRoot] = useState(false);
+  const [isClickTax, setIsClickTax] = useState(false);
+  const TAX_RATE = 1.1;
 
   const clickNumber = (num) => {
     if (operator === null) {
@@ -61,6 +63,7 @@ export default function App() {
     setIsClickEqual(false);
     setIsClickPercent(false);
     setIsClickRoot(false);
+    setIsClickTax(false);
   };
 
   const clickToggleSign = () => {
@@ -97,6 +100,28 @@ export default function App() {
     );
   };
 
+  const clickInTax = () => {
+    if (operator === null) {
+      setAnswer(leftValue * TAX_RATE);
+      setIsClickTax(true);
+    } else if (answer !== 0) {
+      setAnswer(answer * TAX_RATE);
+      setIsClickEqual(false);
+      setIsClickTax(true);
+    }
+  };
+
+  const clickWithoutTax = () => {
+    if (operator === null) {
+      setAnswer(leftValue / TAX_RATE);
+      setIsClickTax(true);
+    } else if (answer !== 0) {
+      setAnswer(answer / TAX_RATE);
+      setIsClickEqual(false);
+      setIsClickTax(true);
+    }
+  };
+
   return (
     <div className="container">
       <DisplayAnswer
@@ -107,6 +132,7 @@ export default function App() {
         isClickEqual={isClickEqual}
         isClickPercent={isClickPercent}
         isClickRoot={isClickRoot}
+        isClickTax={isClickTax}
         answer={answer}
       />
       <Button
@@ -117,6 +143,8 @@ export default function App() {
         clickToggleSign={clickToggleSign}
         clickPercent={clickPercent}
         clickRoot={clickRoot}
+        clickInTax={clickInTax}
+        clickWithoutTax={clickWithoutTax}
       />
     </div>
   );
