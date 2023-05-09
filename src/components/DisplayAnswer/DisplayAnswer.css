@@ -3,4 +3,8 @@
   margin: 10px 3px;
   padding: 8px;
   font-size: large;
+  border-top: 2px solid #dcdcdc;
+  border-right: 2px solid #c0c0c0;
+  border-left: 2px solid #c0c0c0;
+  border-bottom: 2px solid #a9a9a9;
 }
