@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "./components/Button/Button";
 import { DisplayAnswer } from "./components/DisplayAnswer/DisplayAnswer";
+import { DisplayFormula } from "./components/DisplayFormula/DisplayFormula";
 import "./styles.css";
 
 export default function App() {
@@ -124,7 +125,7 @@ export default function App() {
 
   return (
     <div className="container">
-      <DisplayAnswer
+      <DisplayFormula
         leftValue={leftValue}
         operator={operator}
         displayOperator={displayOperator}
@@ -133,8 +134,8 @@ export default function App() {
         isClickPercent={isClickPercent}
         isClickRoot={isClickRoot}
         isClickTax={isClickTax}
-        answer={answer}
       />
+      <DisplayAnswer answer={answer} />
       <Button
         clickNumber={clickNumber}
         clickOperator={clickOperator}
